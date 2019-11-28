@@ -2,9 +2,10 @@
 /* eslint-disable react/sort-comp */
 
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text,Image } from '@tarojs/components'
 import './index.less'
 import  Child from './child'
+import Img from '../../img/1.png'
 
 export default class Index extends Component {
 
@@ -72,6 +73,7 @@ export default class Index extends Component {
     let {name,obj}=this.state;
     return (
       <View className='index'>
+        <Image src={Img} />
         <Text>{this.state.name}</Text>
         <View><Text>{this.state.text}</Text></View> 
         <Child name={name} obj={obj} test={this.test} />
