@@ -1,9 +1,13 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
+const ENV = process.env.TARO_ENV  //环境变量
 export default class Event extends Component {
     state = {
         name: '张三',
         age: 18,
+    }
+    componentWillMount(){
+        console.log('环境变量',ENV)
     }
     test(params1, params2, event) { //event永远是最后一个参数
         console.log(params1, params2, event)

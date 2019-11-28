@@ -14,7 +14,7 @@ class Child extends Component{
     render(){
         let {name,obj}=this.props;
         return(
-        <View onClick={this.cl} >
+        <View onClick={this.cl.bind(this)} >
             我是子节点{name+"----"+obj.key[0].name}
         </View>
         ) 
