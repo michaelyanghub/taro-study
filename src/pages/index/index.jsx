@@ -4,6 +4,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.less'
+import  Child from './child'
 
 export default class Index extends Component {
 
@@ -13,7 +14,8 @@ export default class Index extends Component {
   state={
     name:'hello world!!',
     text:'张三',
-    age:18
+    // obj:null //会报错
+    // obj:undefined //写上或者 屏蔽都可以
   }
 
   componentWillMount () {
@@ -22,7 +24,13 @@ export default class Index extends Component {
 
   componentDidMount () {
     console.log('第一次渲染之后执行 只执行一次') 
-    this.setState({name:'hello china',text:'wang'})
+    this.setState({
+      name:'hello china',
+      text:'李四',
+      obj:{
+        key:[{name:'张三'}]
+      }
+    })
   }
 
   componentWillUnmount () {
@@ -56,10 +64,12 @@ export default class Index extends Component {
   }
 
   render () {
+    let {name,obj}=this.state;
     return (
       <View className='index'>
         <Text>{this.state.name}</Text>
-        <View><Text>{this.state.text}</Text></View>
+        <View><Text>{this.state.text}</Text></View> 
+        <Child name={name} obj={obj} />
       </View>
     )
   }
