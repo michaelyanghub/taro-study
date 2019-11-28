@@ -1,8 +1,10 @@
 /* eslint-disable react/sort-comp */
 
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text,Button } from '@tarojs/components'
+import { View, Image,Button } from '@tarojs/components'
 // import './index.less'
+import Img from '../../img/1.png'
+import './test.less'
 
 export default class Test extends Component {
 
@@ -17,6 +19,7 @@ export default class Test extends Component {
   render () {
     return (
       <View className='index'>
+          <Image className="img" src={Img} />
           <Button onClick={this.clickHandle}>跳转</Button>
       </View>
     )
