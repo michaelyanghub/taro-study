@@ -14,10 +14,11 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/index/index',
       'pages/event/event',
       'pages/dialog/testdialog',
       'pages/test/test',
-      'pages/index/index'
+      
     ],
     window: {
       backgroundTextStyle: 'light',
