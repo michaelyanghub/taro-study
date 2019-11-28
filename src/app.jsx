@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 
@@ -13,6 +14,7 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/test/test',
       'pages/index/index'
     ],
     window: {

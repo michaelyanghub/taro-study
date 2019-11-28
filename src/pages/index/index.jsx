@@ -19,7 +19,8 @@ export default class Index extends Component {
   }
 
   componentWillMount () {
-    console.log('第一次渲染之前执行 只执行一次')
+    let {name} = this.$router.params
+    console.log('第一次渲染之前执行 只执行一次'+name)
   }
 
   componentDidMount () {
