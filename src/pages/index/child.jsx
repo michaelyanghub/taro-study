@@ -7,10 +7,18 @@ class Child extends Component{
         // this.props.flag!=nextProps.flag;
         console.log('props属性变化了'+nextProps.name);
     }
+    cl(){
+        // eslint-disable-next-line taro/this-props-function
+        this.props.test();
+    }
     render(){
         let {name,obj}=this.props;
-        return(<View>我是子节点{name+"----"+obj.key[0].name}</View>) 
-    }
+        return(
+        <View onClick={this.cl.bind(this)} >
+            我是子节点{name+"----"+obj.key[0].name}
+        </View>
+        ) 
+    } 
 }
 Child.defaultProps={
     obj:{

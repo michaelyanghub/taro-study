@@ -63,13 +63,17 @@ export default class Index extends Component {
     }  
   }
 
+  test(){
+    console.log('test父组件传递参数给子组件')
+  }
+
   render () {
     let {name,obj}=this.state;
     return (
       <View className='index'>
         <Text>{this.state.name}</Text>
         <View><Text>{this.state.text}</Text></View> 
-        <Child name={name} obj={obj} />
+        <Child name={name} obj={obj} test={this.test} />
       </View>
     )
   }
